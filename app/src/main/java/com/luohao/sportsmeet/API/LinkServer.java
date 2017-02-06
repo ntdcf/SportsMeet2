@@ -22,7 +22,7 @@ public class LinkServer extends Thread {
     private String HttpURL;
     private String HTTPData;
 
-    public String returnData;
+    private String returnData;
 
     private String sendData(String Data) throws IOException {
         BufferedReader inputStreamReader;
@@ -44,12 +44,12 @@ public class LinkServer extends Thread {
             return inputStreamReader.readLine();
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            AppsData.getReturn("内部出错，请重试", 400);
+            AppsData.getReturn("内部出错，请重试", 400, "");
         } catch (IOException e) {
             e.printStackTrace();
-            AppsData.getReturn("内部出错，请重试", 400);
+            AppsData.getReturn("内部出错，请重试", 400, "");
         }
-        return AppsData.getReturn("内部出错，请重试", 400);
+        return AppsData.getReturn("内部出错，请重试", 400, "");
     }
 
     private String getHTTPData() {

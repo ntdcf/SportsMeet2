@@ -15,11 +15,12 @@ public class AppsData {
     public static String SessionData = "";
 
     //返回给客户端统一的形式
-    public static String getReturn(String msg, int num) {
+    public static String getReturn(String msg, int num, String data) {
         JSONObject jsonObject =new JSONObject();
         try {
             jsonObject.put("msg", msg);
             jsonObject.put("num", num);
+            jsonObject.put("data", data);
         } catch (JSONException e) {
             e.printStackTrace();
         }
