@@ -8,9 +8,14 @@ import org.json.JSONObject;
  */
 
 public class AppsData {
-    public static final String LoginServerURL = "http://222.24.63.100:9149/SportMeetService/login";
-    public static final String RegServerURL = "http://222.24.63.100:9149/SportMeetService/reg";
-    public static final String SessionURL = "http://222.24.63.100:9149/SportMeetService/getsession";
+//    public static final String LoginServerURL = "http://222.24.63.100:9149/SportMeetService/login";
+//    public static final String RegServerURL = "http://222.24.63.100:9149/SportMeetService/reg";
+//    public static final String SessionURL = "http://222.24.63.100:9149/SportMeetService/getsession";
+
+
+    public static final String LoginServerURL = "http://192.168.10.125:8080/SportMeetService/login";
+    public static final String RegServerURL = "http://192.168.10.125:8080/SportMeetService/reg";
+    public static final String SessionURL = "http://192.168.10.125:8080/SportMeetService/getsession";
 
     public static String SessionData = "";
 

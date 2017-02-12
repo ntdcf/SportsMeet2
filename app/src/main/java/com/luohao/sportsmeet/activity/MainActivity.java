@@ -41,33 +41,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
 
-        if (cursor.moveToFirst()) {
+
+        if (!cursor.moveToFirst()) {
             UserMsg.setText("用户未登录");
             UserMsg.setOnClickListener(this);
         } else {
             cursor.moveToFirst();
             linkServer.setHttpURL(AppsData.SessionURL);
             linkServer.setHTTPData(cursor.getString(cursor.getColumnIndex("session_id")));
-
             UserMsg.setText("姓名：罗昊");
+            try {
+                Thread.sleep(100);
+                linkServer.start();
+                Thread.sleep(100);
+                Log.d("session", "session:"+linkServer.getReturnData());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
-        try {
-
-
-            Thread.sleep(100);
-            linkServer.start();
-            Thread.sleep(100);
-            Log.d("session", "session:"+linkServer.getReturnData());
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
-
-        UserMsg.setText("用户未登录");
-        UserMsg.setOnClickListener(this);
     }
 
     @Override

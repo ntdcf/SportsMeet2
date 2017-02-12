@@ -1,6 +1,8 @@
 package com.luohao.sportsmeet.API;
 
 
+import android.util.Log;
+
 import com.luohao.sportsmeet.AppsData;
 
 import java.io.BufferedReader;
@@ -41,6 +43,7 @@ public class LinkServer extends Thread {
             writer.flush();
 
             inputStreamReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+            System.out.println(inputStreamReader.readLine());
             return inputStreamReader.readLine();
         } catch (MalformedURLException e) {
             e.printStackTrace();
