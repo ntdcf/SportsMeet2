@@ -35,12 +35,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         SQLiteDatabase db = dataBaseSession.getWritableDatabase();
         Cursor cursor = db.query("session", null, null, null, null, null, null);
 
-
         UserMsg = (Button) findViewById(R.id.user_msg_main);
-
-
-
-
 
         if (!cursor.moveToFirst()) {
             UserMsg.setText("用户未登录");
